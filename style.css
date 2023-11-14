@@ -1,0 +1,64 @@
+/*.start{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}*/
+
+.main_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_2{
+    display: flex;
+    position: relative;
+    gap: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    gap: 100px;
+    align-items: center;
+    flex-direction: column;
+}
+
+div img{
+    border-radius: 10px;
+    width: 500px;
+}
+
+div div button{
+    margin: 2px;
+    border-radius: 9px;
+}
+
+.start{
+    position: relative;
+    gap: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 700px;
+}
+
+.welcome{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.play{
+    position: absolute;
+    top: 45%;
+    left: 42%;
+    padding: 10px;
+    background-color: aqua;
+}
+
+.dis{
+    position: absolute;
+    top: 70%;
+    left: 30%;
+}
