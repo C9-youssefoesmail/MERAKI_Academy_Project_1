@@ -10,15 +10,23 @@ play.addEventListener("click", () => {
 const body = document.querySelector("body")
 
 const hangManQu = [
-    {
-        que : "commonly referred to as the domestic pet or house pet",
-        ans : "catc",
-    },
+  {
+      que : "commonly referred to as the domestic pet or house pet",
+      ans : "catc",
+  },
+  {
+    que : "An animal often used when describing the Zionist entity",
+    ans : "pig",
+  },
+  {
+    que : "An animal use all four limbs—two arms and two legs—to walk and run. Their hands and feet are good for grasping tree branches",
+    ans : "monkey",
+  },
 ]
 
 const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",];
 
-const images = ["PIC/hangman_pic_1.png","PIC/hangman_pic_2.png","PIC/hangman_pic_3.png","PIC/hangman_pic_4.png","PIC/hangman_pic_5.png","PIC/hangman_pic_6.png","PIC/hangman_pic_7.png"]
+let images = ["PIC/hangman_pic_1.png","PIC/hangman_pic_2.png","PIC/hangman_pic_3.png","PIC/hangman_pic_4.png","PIC/hangman_pic_5.png","PIC/hangman_pic_6.png","PIC/hangman_pic_7.png"]
 
 const ansSpace = []
 
@@ -27,12 +35,22 @@ mainDiv.classList.add("main_2")
 const question = document.createElement("div")
 const pics = document.createElement("img")
 const alpha = document.createElement("div")
+alpha.classList.add("alphaChar")
 const divSpace = document.createElement("div")
+const btn_1 = document.createElement("button")
+btn_1.innerText = "Play again"
+const btn_2 = document.createElement("button")
+btn_2.innerText = "Quit"
+btn_1.style.alignItems = "center"
+
+const getRandomInt = (max) => {
+  return Math.floor(Math.random() * max);
+}
+
+let q = hangManQu[getRandomInt(hangManQu.length)]
 
 const startTheGame = () =>
 {
-  hangManQu.forEach((q , i) => {
-
     for(let i = 0 ; i < q.ans.length ; i++)
     {
       ansSpace.push("_")
@@ -53,6 +71,10 @@ const startTheGame = () =>
               divSpace.innerText = ansSpace.join(" ")
             }
           }
+          if(!divSpace.innerText.includes("_"))
+          {
+            finish()
+          }
         }
         else
         {
@@ -61,14 +83,14 @@ const startTheGame = () =>
           images.shift()
           if(images[0] === undefined)
           {
-            restart()
+            document.querySelector(".alphaChar").innerText = ""
+            finish()
           }
           else
           {
             pics.src = images[0]
           }
         }
-      })
     })
 
     question.innerText = q.que
@@ -80,10 +102,52 @@ const startTheGame = () =>
   })
 }
 
+const finish = () =>
+{
+  btn_1.style.display = "block"
+  btn_2.style.display = "block"
+  console.log(divSpace.innerText)
+  body.append(btn_1)
+  body.append(btn_2)
+  document.querySelector(".alphaChar").innerText = ""
+  btn_1.addEventListener("click" , ()=>
+  {
+    document.querySelector(".alphaChar").innerText = ""
+    palyAgain()
+  })
+  btn_2.addEventListener("click" , ()=>
+  {
+    document.querySelector(".alphaChar").innerText = ""
+    restart()
+  })
+}
+
 const restart = () =>
 {
   mainDiv.style.display = "none"
   start.style.display = "block"
+  images = ["PIC/hangman_pic_1.png","PIC/hangman_pic_2.png","PIC/hangman_pic_3.png","PIC/hangman_pic_4.png","PIC/hangman_pic_5.png","PIC/hangman_pic_6.png","PIC/hangman_pic_7.png"]
+  for(let i = 0 ; i<q.ans.length ; i++)
+  {
+    ansSpace.shift()
+  }
+  btn_1.style.display = "none"
+  btn_2.style.display = "none"
+  q = hangManQu[getRandomInt(hangManQu.length)]
+  console.log(alpha)
 }
 
+const palyAgain = () =>
+{
+  images = ["PIC/hangman_pic_1.png","PIC/hangman_pic_2.png","PIC/hangman_pic_3.png","PIC/hangman_pic_4.png","PIC/hangman_pic_5.png","PIC/hangman_pic_6.png","PIC/hangman_pic_7.png"]
+  for(let i = 0 ; i<q.ans.length ; i++)
+  {
+    ansSpace.shift()
+  }
+  btn_1.style.display = "none"
+  btn_2.style.display = "none"
+  q = hangManQu[getRandomInt(hangManQu.length)]
+  
+  startTheGame()
+}
 
