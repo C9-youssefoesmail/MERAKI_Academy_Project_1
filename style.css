@@ -1,11 +1,7 @@
-/*.start{
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 10px;
-}*/
+
+body {
+    background-color: #885858;
+}
 
 .main_1{
     display: flex;
@@ -14,19 +10,19 @@
 }
 
 .main_2{
-    display: flex;
-    position: relative;
-    gap: 100px;
     border: 1px solid black;
     border-radius: 10px;
-    gap: 100px;
-    align-items: center;
-    flex-direction: column;
+    background-color: blanchedalmond;
+}
+
+.main_2 div{
+    margin: 20px;
 }
 
 div img{
     border-radius: 10px;
     width: 500px;
+    margin: 50px;
 }
 
 div div button{
@@ -41,6 +37,7 @@ div div button{
     border-radius: 10px;
     width: 500px;
     height: 700px;
+    background-color: blanchedalmond;
 }
 
 .welcome{
@@ -51,14 +48,68 @@ div div button{
 
 .play{
     position: absolute;
-    top: 45%;
-    left: 42%;
-    padding: 10px;
+    top: 35%;
+    left: 40%;
+    padding: 15px;
+    background-color: aqua;
+}
+
+.question{
+    position: absolute;
+    top: 54%;
+    left: 33%;
+    padding: 15px;
     background-color: aqua;
 }
 
 .dis{
     position: absolute;
     top: 70%;
-    left: 30%;
+    left: 2%;
+}
+
+.q_div_layout{
+    position: relative;
+    gap: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 700px;
+    background-color: blanchedalmond;
+}
+
+.ans_div{
+    position: absolute;
+    top: 12%;
+    left: 50%;
+}
+
+.ans_input_div{
+    position: absolute;
+    top: 20%;
+    left: 48%;
+}
+
+.que_div{
+    position: absolute;
+    top: 12%;
+    left: 10%;
+}
+
+.que_input_div{
+    position: absolute;
+    top: 20%;
+    left: 7%;
+}
+
+.btn_input_div{
+    position: absolute;
+    top: 47%;
+    left: 7%;
+}
+
+.btn_back_div{
+    position: absolute;
+    top: 51%;
+    left: 7%;
 }
