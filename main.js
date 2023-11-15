@@ -12,11 +12,7 @@ const body = document.querySelector("body")
 const hangManQu = [
   {
       que : "commonly referred to as the domestic pet or house pet",
-      ans : "catc",
-  },
-  {
-    que : "An animal often used when describing the Zionist entity",
-    ans : "pig",
+      ans : "cat",
   },
   {
     que : "An animal use all four limbs—two arms and two legs—to walk and run. Their hands and feet are good for grasping tree branches",
